@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="jquery-3.5.0.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#container div a").click(function() {
+        $(this).parent().animate({
+           width: '+=100px'
+        }, 500);
+ 
+        $(this).prev().html(parseInt($(this).prev().html()) + 1);
+        return false;
+    });
+});
+</script>
+<style type="text/css">
+    * {
+        font-family: Arial, "Free Sans";
+    }
+    #container {
+        margin-top: 20px;
+        color: #fff;
+    }
+    #container #question {
+        display: block;
+        padding: 20px;
+        font-weight: bold;
+        letter-spacing: -3px;
+        margin-bottom: 20px;
+        padding: 10px;
+        font-size: 40px;
+    }
+    #container div {
+        font-weight: bold;
+        letter-spacing: -3px;
+        background: #0099cc;
+        margin-bottom: 15px;
+        padding: 10px;
+        font-size: 34px;
+        color: #ffffff;
+        border-left: 20px solid #333;
+        width: 600px;
+        -webkit-border-radius: 0.5em;
+        -moz-border-radius: 0 0.5em 0.5em 0;
+        border-radius: 0 1.5em 1.5em 0;
+    }
+    #container div a {
+        border-radius: 0.3em;
+        text-decoration: none;
+        color: #0099cc;
+        padding: 5px 15px;
+        background: #333;
+        margin: 0 20px;
+    }
+    #container div a:hover {
+        color: #fff;
+    }
+    
+</style>
+</head>
+<body>
+  <div id="container">
+      <div id="question">Cколько вам лет?</div>
+      <div><span>0</span><a href="">Проголосовать</a>До 10 лет</div>
+      <div><span>0</span><a href="">Проголосовать</a>10-20 лет</div>
+      <div><span>0</span><a href="">Проголосовать</a>20-30 лет</div>
+      <div><span>0</span><a href="">Проголосовать</a>40-50 лет</div>
+      <div><span>0</span><a href="">Проголосовать</a>50-60 лет</div>
+      <div><span>0</span><a href="">Проголосовать</a>Больше 60 лет</div>
+  </div>
+</body>
+</html>

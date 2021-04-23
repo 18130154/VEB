@@ -1,0 +1,24 @@
+﻿<html>
+<head>
+<title>Баталова</title>
+<script src="jquery-3.5.0.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".btn-slide").click(function(){
+        $("#panel").slideToggle("slow");
+        $(this).toggleClass("active");
+    });
+});
+</script>
+</head>
+<body>
+<div class="wrapper">
+<!-- Выдвижная панель -->
+<div id="panel">
+Выдвижная панель
+</div>
+<button class="btn-slide">Нажми!</button>
+</div>
+</body>
+</html>
