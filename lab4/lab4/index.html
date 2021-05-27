@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Баталова Лиана Шамильевна</title>
+  <link rel="stylesheet" href="jq/jquery-ui.min.css">
+  <link rel="stylesheet" href="jq/jquery-ui.structure.min.css">
+  <link rel="stylesheet" href="jq/jquery-ui.theme.min.css">
+  <link rel="stylesheet" href="jq/jquery-confirm.min.css">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+
+  </head>
+<body> 
+<h1 align="center"><font color="blue" face="Arial"> Компания BatalovaFly </h1>
+  <div class="wrap">
+    <div id="tabs">
+      <ul>
+        <li>Авиарейсы</li>
+		<h2 align="center"> Компания - авиаперевозчик, которая занимается пассажирскими авиаперевозками </h2>
+		<h2 align="center"> Единственная авиакомпания, где цены на все рейсы фиксированы: 5000 рублей за человека </h2>
+		<p> Полеты совершаются в такие города, как Москва, Санкт-Петербург, Уфа, Крым, Сочи </p>
+        <li data-price="5000"><a href="#tabs" title="Стоимость 1 билета - 5000р" >Покупка билетов</a></li>
+      </ul>
+      <div id="main">
+      </div>
+      <div id="tabs">
+      </div>
+    </div>
+
+    <div class="params">
+      <form action="" id='validform' class='validform'><p> Ваше ФИО: </p>
+      <input type="text" id="fio" class="putName" placeholder="ФИО">
+      
+      <script>function handle() {
+  var rep = document.getElementById('fio');
+  rep.value = rep.value.replace(/[^А-Яа-яЁё ]/g, "");
+}
+var input = document.getElementById('fio');
+input.onkeydown = input.onkeyup = input.onkeypress = handle;</script>
+      <p> Электронная почта </p>
+       <input class="text-input" type="email" id="emailaddress" name="emailaddress">
+       
+
+      <p> Ваш пол: </p>
+		<select name="sex" >
+		<option value="m"> Мужской </option>
+		<option value="f"> Женский </option>
+		</select>
+		<p> Серия и номер паспорта: </p>
+		<input type="text" class="pasp" placeholder="Серия и номер паспорта">
+		<script src="jq/jquery.js"></script>
+		<script src="jq/jquery.maskedinput.min.js"></script>
+		<script>
+		$('.pasp').mask('99-99 999999');
+		</script>
+	   <p>Дата: <input type="text" id="datepicker"></p>
+      <p><label for="from">Пункт отправления:</label></p>
+      <select name="from" id="from">
+	    <option selected="selected">Уфа</option>
+        <option>Москва</option>
+        <option>Санкт-Петербург</option>
+        <option>Крым</option>
+        <option>Сочи</option>
+      </select>
+
+     <p> <label for="to">Пункт назначения:</label></p>
+      <select name="to" id="to">
+        <option>Уфа</option>
+        <option selected="selected">Москва</option>
+        <option>Санкт-Петербург</option>
+        <option>Крым</option>
+        <option>Сочи</option>
+      </select>
+
+      <p id="people">Количество мест:</p>
+      <div id="slider">
+        <div id="custom-handle" class="ui-slider-handle"></div>
+      </div>
+	  <p>Сумма за билеты:</p>
+        <div id="total"></div>
+		
+        <div id="boxes"><p>Дополнительные платные функции</p>
+   <input type="checkbox" data-exval="500">Предварительное бронирование определенного места в салоне +500 рублей<Br>
+   <input type="checkbox" data-exval="3000">Страховка багажа +3000 рублей<Br>
+   <input type="checkbox" data-exval="5000">Доплата за перевес багажа +5000<Br> 
+   <input type="checkbox" data-exval="4000">Перевоз животного +4000<Br> </div>
+   <p>Сумма за дополнительные платные функции: </p>
+        <div  id="result"></div>
+	
+		<!--<button id="buy" disabled>Купить билеты</button>-->
+		<input id="btn-reset" type="button" value="Купить билеты" class="btn-disabled btn-reset button button-blue" disabled="true">
+	</form>
+
+      <div id="dialog-confirm" title="Внимание">
+        <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Сохранить выбранные параметры?</p>
+      </div>
+	
+      <div id="dialog">
+        <p>Данные успешно сохранены</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script src="jq/jquery.js"></script>
+<script src="jq/jquery-ui.min.js"></script>
+<script src="jq/jquery.jcarousel.min.js"></script>
+<script src="jq/jquery-confirm.min.js"></script>
+<script type="text/javascript" src="validate.js"></script>
+<script type="text/javascript" src="jquery.mask.min.js"></script>
+<script src="main.js"></script>
+</html>
