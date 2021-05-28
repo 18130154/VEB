@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Баталова Лиана Шамильевна</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+
+<body>
+  <script>
+    window.addEventListener("load",function() {
+      var request = new XMLHttpRequest();
+      request.open('GET','getrev.php',true);
+      request.addEventListener('readystatechange', function() {
+       if ((request.readyState==4) && (request.status==200)) {
+          var welcome = document.getElementById('reviews');
+          welcome.innerHTML = request.responseText;
+        }
+      });
+      
+    request.send();
+    });
+      function newrev(str) {
+          alert("Отзыв отправлен!");
+      if (str.length==0) {
+          document.getElementById("reviews").innerHTML="";
+          return;
+        }
+        if (window.XMLHttpRequest) {
+          
+          xmlhttp=new XMLHttpRequest();
+          } else {  
+            
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+       xmlhttp.onreadystatechange=function() {
+        if (this.readyState==4 && this.status==200) {
+         
+           document.getElementById("reviews").innerHTML=this.responseText;
+        }
+        }
+        
+        var nam = document.getElementById("name").value, email = document.getElementById("email").value, rev=document.getElementById("rev").value;
+      var variables = "name="+nam+"&email="+email+"&rev="+rev;
+         xmlhttp.open("GET","rev.php?"+variables,true);
+         xmlhttp.send();
+      }
+    </script>
+
+<div class="wrap">
+
+  <h3>Напишите ваше пожелание!</h3>
+  <section class="message-form">
+
+      <form method="get" id='validform'>
+   
+
+        <input class="inputs" type="text" name="name" placeholder="Имя" id="name"/>
+        <input class="inputs" type="text" name="email" placeholder="E-mail" id="email"/>
+       <input class="inputs" type="text" name="rev" placeholder="Пожелание" id="rev"/>
+            <input onclick = "newrev(this.value)" type="button" id="btn" value="Отправить" />
+      </form>
+<br>
+      <div id="result_form"></div> 
+    <span id = "reviews"></span> 
+  </section>
+</div>
+</body>
+
+
+
+</html>

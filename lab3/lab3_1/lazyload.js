@@ -27,7 +27,7 @@ var lazyload = lazyload || {};
                 appendContests(response);
             },
             error: function(response) {
-                $(loadingId).text("Sorry, there was some error with the request. Please refresh the page.");
+                $(loadingId).text("Записи закончились!");
             }
         });
     };
